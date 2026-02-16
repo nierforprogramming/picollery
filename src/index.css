@@ -4,16 +4,45 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Georgia, "Times New Roman", Times, serif;
+:root {
+  --accent-color: dodgerblue;
 }
 
+body {
+  background-color: rgb(252, 246, 246);
+}
 .container {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.logo {
+  text-transform: uppercase;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: white;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+  box-shadow: 1px -3px 10px gray;
+  padding: 1em 1em;
+}
+.logo h2 {
+  position: relative;
+  margin-left: 1em;
+}
+
+.logo h2::after {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  bottom: 5px;
+  content: "";
+  background-color: var(--accent-color);
+  position: absolute;
 }
 
 .skeleton-container {
@@ -29,7 +58,7 @@ body {
 .image-gallery-container {
   display: grid;
   gap: 2em;
-  margin: 2em;
+  margin: 6em 2em;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 

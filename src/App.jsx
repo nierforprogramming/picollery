@@ -6,11 +6,13 @@ import ImageCardSkeleton from "./components/ui/ImageCardSkeleton";
 
 const App = () => {
   return (
-    <div className="container">
+    <>
       <Logo />
-      <ImageGallery />
-      {/* <ImageCardSkeleton /> */}
-    </div>
+      <div className="container">
+        <ImageGallery />
+        {/* <ImageCardSkeleton /> */}
+      </div>
+    </>
   );
 };
 
