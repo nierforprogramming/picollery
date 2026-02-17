@@ -6,13 +6,30 @@
 
 :root {
   --accent-color: dodgerblue;
+  --bg-color: rgb(252, 246, 246);
+  --bg-color-two: rgb(252, 246, 246);
+  --text-color: #221f1f;
+  --card-bg: #f5f5f5;
+  --shadow: grey;
+}
+
+[data-theme="dark"] {
+  --bg-color: #232121;
+  --text-color: #eeeeee;
+  --bg-color-two: #181717;
+  --card-bg: #1d1b1b;
+  --shadow: #181717;
 }
 
 html {
   scroll-behavior: smooth;
 }
 body {
-  background-color: rgb(252, 246, 246);
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
 .container {
   max-width: 100%;
@@ -25,13 +42,18 @@ body {
 .logo {
   text-transform: uppercase;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background: white;
+  background: var(--bg-color-two);
   position: fixed;
   width: 100%;
   z-index: 1000;
   top: 0;
-  box-shadow: -1px -8px 8px gray;
+  box-shadow: -1px -5px 15px var(--shadow);
   padding: 1em 1em;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
 }
 .logo h2 {
   position: relative;
@@ -46,6 +68,10 @@ body {
   content: "";
   background-color: var(--accent-color);
   position: absolute;
+}
+
+.theme-icon {
+  font-size: 1.5rem;
 }
 
 .skeleton-container {
@@ -77,6 +103,7 @@ body {
   height: 60px;
   border-radius: 30px;
   right: 1em;
+  z-index: 1000;
 }
 
 ion-icon {
