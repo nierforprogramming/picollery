@@ -1,9 +1,19 @@
 import React, { useEffect, useState } from "react";
 import ImageCard from "./ui/ImageCard";
 import { getRandomImage } from "../services/lorempicsum";
+import ScrollFAB from "./ui/ScrollFAB";
 
 const ImageGallery = () => {
   const [images, setImages] = useState([]);
+  const [loaded, setLoaded] = useState(false);
+
+  const handleScrollFAB = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -25,8 +35,13 @@ const ImageGallery = () => {
 
   return (
     <div className="image-gallery-container">
+      {!loaded && <ScrollFAB handleScrollFAB={handleScrollFAB} />}
       {images.map((image) => (
-        <ImageCard key={image.id} image={image} />
+        <ImageCard
+          onLoad={() => setLoaded(true)}
+          key={image.id}
+          image={image}
+        />
       ))}
     </div>
   );
