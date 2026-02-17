@@ -11,6 +11,8 @@
   --text-color: #221f1f;
   --card-bg: #f5f5f5;
   --shadow: grey;
+  --skeleton-base: #e5e7eb;
+  --skeleton-highlight: #f3f4f6;
 }
 
 [data-theme="dark"] {
@@ -19,11 +21,15 @@
   --bg-color-two: #181717;
   --card-bg: #1d1b1b;
   --shadow: #181717;
+  --skeleton-base: #2a2a2a;
+  --skeleton-highlight: #3a3a3a;
 }
 
 html {
   scroll-behavior: smooth;
+  background: var(--bg-color);
 }
+
 body {
   background: var(--bg-color);
   color: var(--text-color);
@@ -79,6 +85,7 @@ body {
   width: 300px;
   display: grid;
   height: 300px;
+  background-color: rebeccapurple;
   gap: 2em;
   margin: 2em;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -174,11 +181,15 @@ ion-icon {
 }
 
 @keyframes pulse {
-  from {
-    background-color: rgb(230, 224, 224);
+  0% {
+    background-color: var(--skeleton-base);
   }
 
-  to {
-    background-color: rgb(216, 211, 211);
+  50% {
+    background-color: var(--skeleton-highlight);
+  }
+
+  100% {
+    background-color: var(--skeleton-base);
   }
 }

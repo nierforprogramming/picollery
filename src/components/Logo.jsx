@@ -1,10 +1,10 @@
 import React from "react";
-import ThemeIcon from "./ui/ThemeIcon";
+import ThemeToggle from "./ui/ThemeToggle";
 
 const Logo = () => {
   return (
     <div className="logo">
-      <ThemeIcon />
+      <ThemeToggle />
       <h2>Picollery</h2>
     </div>
   );
