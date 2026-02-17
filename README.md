@@ -19,6 +19,7 @@ A simple image gallery application for beautiful images.
 
 - ⬇️ Download images
 - 🔍 Image preview modal
+- 🌙 Detect system theme for dark mode
 
 📄 License
 This project is licensed under the MIT License.

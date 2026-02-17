@@ -20,7 +20,7 @@ const ThemeToggle = () => {
   }, [themeToggle]);
 
   return (
-    <div onClick={() => setThemeToggle((prev) => !prev)}>
+    <div className="theme-icon" onClick={() => setThemeToggle((prev) => !prev)}>
       {themeToggle ? "🌙" : "☀️"}
     </div>
   );
